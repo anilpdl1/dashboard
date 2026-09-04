@@ -1,2 +1,34 @@
-import { motion } from 'framer-motion'
-export default function StatCard({ icon:Icon,title,value,change,description,index=0 }) { return <motion.article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm" initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{delay:index*.06}}><div className="flex items-start justify-between"><div><p className="text-sm font-medium text-slate-500">{title}</p><p className="mt-2 text-3xl font-bold tracking-tight text-slate-900">{value}</p></div><span className="rounded-lg bg-blue-50 p-2.5 text-blue-600"><Icon size={20}/></span></div><p className="mt-4 text-sm"><span className="font-semibold text-green-600">{change}</span><span className="ml-1 text-slate-500">{description}</span></p></motion.article> }
+import { motion } from "framer-motion";
+export default function StatCard({
+  icon: Icon,
+  title,
+  value,
+  change,
+  description,
+  index = 0,
+}) {
+  return (
+    <motion.article
+      className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.06 }}
+    >
+      <div className="flex items-start justify-between">
+        <div>
+          <p className="text-sm font-medium text-slate-500">{title}</p>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+            {value}
+          </p>
+        </div>
+        <span className="rounded-lg bg-blue-50 p-2.5 text-blue-600">
+          <Icon size={20} />
+        </span>
+      </div>
+      <p className="mt-4 text-sm">
+        <span className="font-semibold text-green-600">{change}</span>
+        <span className="ml-1 text-slate-500">{description}</span>
+      </p>
+    </motion.article>
+  );
+}

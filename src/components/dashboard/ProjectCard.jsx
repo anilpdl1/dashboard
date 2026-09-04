@@ -1,4 +1,60 @@
-import { ExternalLink, GitFork } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
-import Badge from '../ui/Badge'
-export default function ProjectCard({ project }) { const navigate=useNavigate(); return <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"><div className="flex items-start justify-between gap-3"><div><h3 className="font-semibold text-slate-900">{project.name}</h3><p className="mt-1 text-sm leading-6 text-slate-500">{project.description}</p></div><Badge status={project.status}>{project.status}</Badge></div><div className="mt-4 flex flex-wrap gap-2">{project.technologies.map(tech=><span key={tech} className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600">{tech}</span>)}</div><div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4"><span className="text-xs text-slate-500">Updated {project.updated}</span><div className="flex gap-1"><a href={project.github} target="_blank" rel="noreferrer" className="rounded p-1.5 text-slate-500 hover:bg-slate-100" aria-label={`${project.name} GitHub`}><GitFork size={17}/></a><a href={project.demo} target="_blank" rel="noreferrer" className="rounded p-1.5 text-slate-500 hover:bg-slate-100" aria-label={`${project.name} demo`}><ExternalLink size={17}/></a><button onClick={()=>navigate(`/projects/${project.id}`)} className="ml-1 text-sm font-semibold text-blue-600 hover:text-blue-700">View</button></div></div></article> }
+import { ExternalLink, GitFork } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import Badge from "../ui/Badge";
+export default function ProjectCard({ project }) {
+  const navigate = useNavigate();
+  return (
+    <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h3 className="font-semibold text-slate-900">{project.name}</h3>
+          <p className="mt-1 text-sm leading-6 text-slate-500">
+            {project.description}
+          </p>
+        </div>
+        <Badge status={project.status}>{project.status}</Badge>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {project.technologies.map((tech) => (
+          <span
+            key={tech}
+            className="rounded-md bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+      <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+        <span className="text-xs text-slate-500">
+          Updated {project.updated}
+        </span>
+        <div className="flex gap-1">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded p-1.5 text-slate-500 hover:bg-slate-100"
+            aria-label={`${project.name} GitHub`}
+          >
+            <GitFork size={17} />
+          </a>
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded p-1.5 text-slate-500 hover:bg-slate-100"
+            aria-label={`${project.name} demo`}
+          >
+            <ExternalLink size={17} />
+          </a>
+          <button
+            onClick={() => navigate(`/projects/${project.id}`)}
+            className="ml-1 text-sm font-semibold text-blue-600 hover:text-blue-700"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}

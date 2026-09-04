@@ -1,3 +1,30 @@
-import { CheckCircle2, GitCommitHorizontal, GitPullRequest, Rocket, FolderPlus } from 'lucide-react'
-const config={commit:{Icon:GitCommitHorizontal,color:'bg-blue-50 text-blue-600'},pull:{Icon:GitPullRequest,color:'bg-purple-50 text-purple-600'},issue:{Icon:CheckCircle2,color:'bg-green-50 text-green-600'},project:{Icon:FolderPlus,color:'bg-amber-50 text-amber-600'},deploy:{Icon:Rocket,color:'bg-sky-50 text-sky-600'}}
-export default function ActivityItem({ activity }) { const {Icon,color}=config[activity.type]; return <div className="relative flex gap-4 pb-6 last:pb-0"><span className={`grid h-9 w-9 shrink-0 place-items-center rounded-full ${color}`}><Icon size={17}/></span><div><p className="text-sm font-medium text-slate-800">{activity.title}</p><p className="mt-1 text-xs text-slate-500">{activity.time}</p></div></div> }
+import {
+  CheckCircle2,
+  GitCommitHorizontal,
+  GitPullRequest,
+  Rocket,
+  FolderPlus,
+} from "lucide-react";
+const config = {
+  commit: { Icon: GitCommitHorizontal, color: "bg-blue-50 text-blue-600" },
+  pull: { Icon: GitPullRequest, color: "bg-purple-50 text-purple-600" },
+  issue: { Icon: CheckCircle2, color: "bg-green-50 text-green-600" },
+  project: { Icon: FolderPlus, color: "bg-amber-50 text-amber-600" },
+  deploy: { Icon: Rocket, color: "bg-sky-50 text-sky-600" },
+};
+export default function ActivityItem({ activity }) {
+  const { Icon, color } = config[activity.type];
+  return (
+    <div className="relative flex gap-4 pb-6 last:pb-0">
+      <span
+        className={`grid h-9 w-9 shrink-0 place-items-center rounded-full ${color}`}
+      >
+        <Icon size={17} />
+      </span>
+      <div>
+        <p className="text-sm font-medium text-slate-800">{activity.title}</p>
+        <p className="mt-1 text-xs text-slate-500">{activity.time}</p>
+      </div>
+    </div>
+  );
+}

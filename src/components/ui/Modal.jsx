@@ -1,3 +1,40 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { X } from 'lucide-react'
-export default function Modal({ open,onClose,title,children }) { return <AnimatePresence>{open && <motion.div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onMouseDown={onClose}><motion.section className="w-full max-w-lg rounded-xl bg-white p-6 shadow-xl" initial={{opacity:0,scale:.96,y:12}} animate={{opacity:1,scale:1,y:0}} exit={{opacity:0,scale:.96,y:12}} onMouseDown={event=>event.stopPropagation()} role="dialog" aria-modal="true" aria-label={title}><div className="mb-5 flex items-center justify-between"><h2 className="text-lg font-semibold text-slate-900">{title}</h2><button onClick={onClose} className="rounded-md p-1 text-slate-500 hover:bg-slate-100" aria-label="Close modal"><X size={20}/></button></div>{children}</motion.section></motion.div>}</AnimatePresence> }
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
+export default function Modal({ open, onClose, title, children }) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onMouseDown={onClose}
+        >
+          <motion.section
+            className="w-full max-w-lg rounded-xl bg-white p-6 shadow-xl"
+            initial={{ opacity: 0, scale: 0.96, y: 12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 12 }}
+            onMouseDown={(event) => event.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={title}
+          >
+            <div className="mb-5 flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
+              <button
+                onClick={onClose}
+                className="rounded-md p-1 text-slate-500 hover:bg-slate-100"
+                aria-label="Close modal"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            {children}
+          </motion.section>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}

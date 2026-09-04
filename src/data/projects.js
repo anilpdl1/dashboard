@@ -1,0 +1,6 @@
+export const projects = [
+  { id: 'devlink', name: 'DevLink', description: 'Developer networking platform for sharing work and finding collaborators.', technologies: ['React', 'Node.js', 'MongoDB'], status: 'Active', updated: '2 hours ago', github: 'https://github.com', demo: 'https://example.com', commits: 128, contributors: 8, completion: 76 },
+  { id: 'portfolio', name: 'Portfolio', description: 'Personal developer portfolio with case studies and experiments.', technologies: ['React', 'Tailwind', 'Framer Motion'], status: 'Completed', updated: 'Yesterday', github: 'https://github.com', demo: 'https://example.com', commits: 84, contributors: 2, completion: 100 },
+  { id: 'taskflow', name: 'TaskFlow', description: 'Focused project management application for small product teams.', technologies: ['React', 'Express', 'MongoDB'], status: 'In Progress', updated: '3 days ago', github: 'https://github.com', demo: 'https://example.com', commits: 63, contributors: 5, completion: 52 },
+  { id: 'apiscope', name: 'API Scope', description: 'Team API workspace with documentation and request collections.', technologies: ['TypeScript', 'Vite', 'PostgreSQL'], status: 'Planned', updated: '1 week ago', github: 'https://github.com', demo: 'https://example.com', commits: 21, contributors: 3, completion: 18 },
+]

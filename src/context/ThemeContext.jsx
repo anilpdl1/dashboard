@@ -16,6 +16,7 @@ export function ThemeProvider({ children }) {
       const isDark =
         theme === "dark" || (theme === "system" && mediaQuery.matches);
       document.documentElement.classList.toggle("dark", isDark);
+      document.documentElement.classList.toggle("light", !isDark);
       document.documentElement.style.colorScheme = isDark ? "dark" : "light";
     };
 

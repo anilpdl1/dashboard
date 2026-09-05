@@ -17,14 +17,46 @@
   --border-dark: #334155;
 }
 body {
+  min-width: 320px;
+  background: var(--background);
+  color: var(--text);
+}
+
+html.dark body {
   background: var(--background-dark);
   color: var(--text-dark);
 }
 
-.light {
-  background: var(--background);
-  color: var(--text);
-}
+/* The app uses Tailwind's light palette directly. These scoped mappings let the
+   selected document theme affect every existing screen without changing the
+   component API or relying on the operating-system preference. */
+html.dark .bg-slate-50 { background-color: #0f172a; }
+html.dark .bg-white,
+html.dark .bg-white\/90 { background-color: #1e293b; }
+html.dark .bg-slate-100 { background-color: #334155; }
+html.dark .bg-blue-50 { background-color: #172554; }
+html.dark .bg-green-50 { background-color: #052e16; }
+html.dark .bg-purple-50 { background-color: #2e1065; }
+html.dark .bg-amber-50 { background-color: #451a03; }
+html.dark .bg-sky-50 { background-color: #082f49; }
+
+html.dark .border-slate-100,
+html.dark .border-slate-200 { border-color: #334155; }
+html.dark .border-slate-300 { border-color: #475569; }
+html.dark .divide-slate-100 > :not(:last-child) { border-color: #334155; }
+
+html.dark .text-slate-900,
+html.dark .text-slate-800 { color: #f8fafc; }
+html.dark .text-slate-700 { color: #e2e8f0; }
+html.dark .text-slate-600 { color: #cbd5e1; }
+html.dark .text-slate-500 { color: #94a3b8; }
+html.dark .text-slate-400 { color: #94a3b8; }
+
+html.dark input,
+html.dark textarea { background-color: #0f172a; color: #f8fafc; }
+html.dark .hover\:bg-slate-50:hover,
+html.dark .hover\:bg-slate-100:hover { background-color: #334155; }
+html.dark .hover\:text-slate-900:hover { color: #f8fafc; }
 .surface {
   background: var(--surface);
 }
